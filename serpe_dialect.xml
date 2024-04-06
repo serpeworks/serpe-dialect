@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<mavlink>
+  <version>3</version>
+  <messages>
+    <message id="0" name="HEARTBEAT">
+      <description>Heart Beat Message</description>
+    </message>
+    <message id="1" name="REGISTER">
+      <description>Heart Beat Message</description>
+    </message>
+    <message id="2" name="UNREGISTER">
+      <description>Heart Beat Message</description>
+    </message>
+  </messages>
+</mavlink>
