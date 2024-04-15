@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <mavlink>
-  <include>common.xml</include>
+  <!--include>common.xml</include-->
   <version>3</version>
   <messages>
     <message id="65537" name="REGISTER">
