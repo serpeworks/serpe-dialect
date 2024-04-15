@@ -9,7 +9,6 @@
     </message>
     <message id="65538" name="UNREGISTER">
       <description>Unregister a system</description>
-      <field type="uint32_t" name="agent_id"></field>
     </message>
     <message id="65539" name="REGISTER_ACK">
       <description>Register Acknowledgement</description>
