@@ -7,8 +7,8 @@
     <message id="65537" name="REGISTER">
       <description>Register a new system</description>
       <field type="uint32_t" name="agent_id"></field>
-      <field type="float" name="latitude" units="degrees">Latitude in degrees</field>
-      <field type="float" name="longitude" units="degrees">Longitude in degrees</field>
+      <field type="float" name="latitude">Latitude in degrees</field>
+      <field type="float" name="longitude">Longitude in degrees</field>
     </message>
     <message id="65538" name="UNREGISTER">
       <description>Unregister a system</description>
@@ -24,8 +24,8 @@
     <!-- HEARTBEAT PROTOCOL -->
     <message id="65542" name="HEARTBEAT">
       <description>Heartbeat message to indicate the system is active and to provide its location.</description>
-      <field type="float" name="latitude" units="degrees">Latitude in degrees</field>
-      <field type="float" name="longitude" units="degrees">Longitude in degrees</field>
+      <field type="float" name="latitude">Latitude in degrees</field>
+      <field type="float" name="longitude">Longitude in degrees</field>
     </message>
     <message id="65543" name="HEARTBEAT_ACK">
       <description>Acknowledgement of the heartbeat message</description>
@@ -34,12 +34,11 @@
     <!-- MISSION PROTOCOL -->
     <message id="65544" name="MISSION_REQUEST">
       <description>Includes the definition of a mission, that is the target coordinates and a list of coordinates of waypoints.</description>
-      <field type="float" name="target_latitude" units="degrees">Target latitude in degrees</field>
-      <field type="float" name="target_longitude" units="degrees">Target longitude in degrees</field>
-      <field type="array" name="waypoints" array_length="N">
-        <field type="float" name="latitude" units="degrees">Waypoint latitude in degrees</field>
-        <field type="float" name="longitude" units="degrees">Waypoint longitude in degrees</field>
-      </field>
+      <field type="float" name="target_latitude">Target latitude in degrees</field>
+      <field type="float" name="target_longitude">Target longitude in degrees</field>
+      <field type="uint8_t" name="waypoint_count">Number of valid waypoints</field>
+      <field type="float[32]" name="waypoint_latitudes">Array of waypoint latitudes in degrees (up to 100 waypoints)</field>
+      <field type="float[32]" name="waypoint_longitudes">Array of waypoint longitudes in degrees (up to 100 waypoints)</field>
     </message>
     <message id="65545" name="MISSION_ACCEPT">
       <description>Mission acceptance message.</description>
@@ -49,8 +48,8 @@
     </message>
     <message id="65547" name="MISSION_UPDATE">
       <description>Message to update mission status.</description>
-      <field type="float" name="current_latitude" units="degrees">Current latitude in degrees</field>
-      <field type="float" name="current_longitude" units="degrees">Current longitude in degrees</field>
+      <field type="float" name="current_latitude">Current latitude in degrees</field>
+      <field type="float" name="current_longitude">Current longitude in degrees</field>
     </message>
     <message id="65548" name="MISSION_FINISHED">
       <description>Mission completion message.</description>
